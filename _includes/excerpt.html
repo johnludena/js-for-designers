@@ -1,0 +1,26 @@
+{% if page.image %}<div class="overlay active" style="background-image: url({{ site.baseurl }}/images/{{ page.image }});" data-parallax="9"></div>{% endif %}
+      
+<div class="excerpt">
+
+	{% if page.type == 'home' %}
+
+		<h1>Learn Javascript for UI/UX Development</h1>
+		<p>DESIGNERS: Get a crash course on <em>practical</em> Javascript fundamentals you can learn to bring your user-interfaces to life!</p>
+		
+		<a href="#" title="Scroll" class="scroll">Find out more</a>
+		<!-- <a href="#" title="Find out more" class="top-cta cta-btn">Find out more</a> -->
+
+	{% else %}
+		<span class="title">{{ page.content | reading_time_as_i }}</span>
+
+		<h1>{{ page.title }}</h1>
+		<p>{{ page.excerpt | remove: '<p>' | remove: '</p>' }}</p>
+
+		<span class="meta">Published {{ page.date | date: '%b %-d, %Y' | prepend: '<b>' | append: '</b>' }} {{ page.categories | join: ', ' | prepend: 'in <b>' | append: '</b>' }}</span>
+
+		<a href="#" title="Scroll" class="scroll">Find out more</a>
+	{% endif %}
+        
+
+</div>
+

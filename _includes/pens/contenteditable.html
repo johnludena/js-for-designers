@@ -1,0 +1,25 @@
+<div class="media codepen" data-animation="fadeInUp">
+
+	<p data-height="455" data-theme-id="dark" data-slug-hash="qPyVzW" data-default-tab="html,result" data-user="johnludena" data-embed-version="2" data-pen-title="Simple Demo of 'contentEditable' Property" class="codepen">See the Pen <a href="https://codepen.io/johnludena/pen/qPyVzW/">Simple Demo of 'contentEditable' Property</a> by John Ludena (<a href="https://codepen.io/johnludena">@johnludena</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+	<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+	{% if include.title or include.caption or include.link %}
+		<div class="caption" data-animation="fadeInUp">
+		  
+		  {% if include.title %}
+		  	<h4>{{ include.title }}</h4>
+		  {% endif %}
+
+		  {% if include.caption %}
+		  	<p>{{ include.caption }}</p>
+		  {% endif %}
+
+		  {% if include.link %}
+		  	<a href="{{ include.link }}" title="Visit Website" class="icon video">Visit Website</a>
+		  {% endif %}
+
+		</div>
+	{% endif %}
+
+</div>
+

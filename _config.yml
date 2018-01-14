@@ -1,0 +1,24 @@
+# Site Settings
+baseurl: 		""
+title: 			Javascript for Designers
+
+name: 			Javascript {for} Designers
+description: 	Introducing a practical Javascript course with designers in mind! Learn everyday JS fundamentals that will let you bring your UI/UX vision to life.
+url: 			"http://localhost:4000"
+
+# This will require each of these plugins automatically.
+plugins: [jekyll-paginate]
+
+paginate: 		3
+paginate_path: 	"blog/page:num"
+
+twitter: 		johnludena
+email: 			hello@javascriptfordesigners.io
+
+disqus: 		your_disqus_shortname
+analytics: 		UA-9053515-18
+
+copyright: 		Copyright 2017 Javascript for Designers.	
+
+# Build Settings
+permalinks: 	pretty

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="170px" height="34px"
+	 viewBox="0 0 170 34" enable-background="new 0 0 170 34" xml:space="preserve">
+<title>buttons-light</title>
+<description>Created with Sketch.</description>
+<g id="Page-1" sketch:type="MSPage">
+	<g id="buttons-light" sketch:type="MSArtboardGroup">
+		<path id="Scroll" sketch:type="MSShapeGroup" fill="#FFFFFF" d="M170,0h-34v34h34V0z M153,17.586l4.121-4.122l1.414,1.415
+			L153,20.414V17.586L153,17.586z M153,17.586l-4.121-4.122l-1.414,1.415L153,20.414V17.586L153,17.586z"/>
+		<path id="More" sketch:type="MSShapeGroup" fill="#FFFFFF" d="M102,0v34h34V0H102z M113,16v2h2v-2H113z M118,16v2h2v-2H118z
+			 M123,16v2h2v-2H123z"/>
+		<path id="Open" sketch:type="MSShapeGroup" fill="#FFFFFF" d="M34,0v34h34V0H34z M43,11v2h16v-2H43z M43,16v2h16v-2H43z M43,21v2
+			h16v-2H43z"/>
+		<path id="Close" sketch:type="MSShapeGroup" fill="#FFFFFF" d="M85,18.414l-4.95,4.949l-1.414-1.414L83.586,17l-4.95-4.95
+			l1.414-1.414l4.95,4.95l4.949-4.95l1.414,1.414L86.414,17l4.949,4.949l-1.414,1.414L85,18.414z M68,0v34h34V0H68z"/>
+		<path fill="#FFFFFF" d="M0,0v34h34V0H0z M19.405,10.385h2.223v2.537h-2.223V10.385z M11.794,10.385h2.224v2.537h-2.224V10.385z
+			 M25.799,19.412c-0.463,1.123-1.503,2.146-3.119,3.063c-1.616,0.918-3.529,1.375-5.742,1.375h-0.191
+			c-2.218,0-4.134-0.457-5.747-1.375c-1.613-0.918-2.651-1.94-3.115-3.063V19.36l1.242-0.47c0.568,0.747,1.485,1.381,2.754,1.902
+			c1.269,0.522,2.885,0.782,4.848,0.782h0.226c1.946,0,3.558-0.264,4.835-0.791c1.277-0.526,2.202-1.157,2.776-1.894l1.233,0.47
+			V19.412z"/>
+	</g>
+</g>
+</svg>

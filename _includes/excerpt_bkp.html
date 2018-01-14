@@ -1,0 +1,35 @@
+{% if page.image %}<div class="overlay active" style="background-image: url({{ site.baseurl }}/images/{{ page.image }});" data-parallax="9"></div>{% endif %}
+      
+<div class="excerpt">
+        
+	<span class="title">{{ page.content | reading_time_as_i }}</span>
+
+	{% if page.title %}
+
+		{% if page.type == 'home' %}
+			<h1>&ldquo;I'm a designer who knows HTML and CSS, but every time I try to learn Javascript, it's like trying to learn an alien language...&rdquo;</h1>
+		{% else %}
+			<h1><a href="{{ page.url | prepend: site.baseurl }}" title="{{ page.title }}">{{ page.title }}</a></h1>
+		{% endif %}
+		
+	{% endif %}
+
+	<p>{{ page.excerpt | remove: '<p>' | remove: '</p>' }}</p>
+
+	{% if page.date or page.categories %}
+
+		{% if page.type == 'post' %}
+			<span class="meta">Published {{ page.date | date: '%b %-d, %Y' | prepend: '<b>' | append: '</b>' }} {{ page.categories | join: ', ' | prepend: 'in <b>' | append: '</b>' }}</span>
+		{% else %}
+			<span class="meta">Published {{ page.date | date: '%b %-d, %Y' | prepend: '<b>' | append: '</b>' }}</span>
+		{% endif %}
+	
+	{% endif %}
+
+</div>
+
+{% if page.type == 'home' %}
+	<a href="#" title="Find out more" class="top-cta cta-btn">Find out more</a>
+{% else %}
+	<a href="#" title="Scroll" class="scroll">Find out more</a>
+{% endif %}

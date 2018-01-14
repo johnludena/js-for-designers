@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+
+    <title>Design in The Browser With This ONE Line of Javascript</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Introducing a practical Javascript course with designers in mind! Learn everyday JS fundamentals that will let you bring your UI/UX vision to life." />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Javascript for Designers" />
+    <meta property="og:title" content="Design in The Browser With This ONE Line of Javascript" />
+    <meta property="og:description" content="Introducing a practical Javascript course with designers in mind! Learn everyday JS fundamentals that will let you bring your UI/UX vision to life." />
+    <meta property="og:url" content="http://localhost:4000/design-in-the-browser/" />
+    <meta property="og:image" content="http://localhost:4000/images/header-1.jpg" />
+
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Design in The Browser With This ONE Line of Javascript" />
+    <meta name="twitter:description" content="Introducing a practical Javascript course with designers in mind! Learn everyday JS fundamentals that will let you bring your UI/UX vision to life." />
+    <meta name="twitter:url" content="http://localhost:4000/design-in-the-browser/" />
+    <meta name="twitter:image" content="http://localhost:4000/images/header-1.jpg" />
+    <meta name="twitter:site" content="@johnludena" />
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Design in The Browser With This ONE Line of Javascript" />
+    <link rel="canonical" href="/design-in-the-browser/" />
+
+    <link rel="stylesheet" href="/assets/normalize.css" />
+    <link rel="stylesheet" href="/assets/animate.css" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <meta name="google-site-verification" content="rfD5-ZP3JHiJ0hLz0Nkbjlu7Pid-whXTKl7VsPLNbvg" />
+
+    
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-9053515-18', 'auto');
+        ga('send', 'pageview');
+      </script>
+    
+
+  </head>  
+
+  <body class="preload">
+
+    <div class="spinner"><p>loading...</p></div><!-- spinner animation -->
+
+    <header data-animation="fadeInDownBig">
+      
+      <a href="/" title="Back to Homepage" class="logo">Javascript {for} Designers</a>
+
+      
+      
+
+      <!-- <button class="toggle">Menu</button>
+      <nav>
+        <ul>
+          <li><a href="/" title="Home">Home</a></li>
+          
+            
+          
+            
+          
+            
+              <li><a href="/about.html" title="About this Theme">About this Theme</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/credits.html" title="Credits &amp; Sources">Credits &amp; Sources</a></li>
+            
+          
+          
+        </ul>
+      </nav> -->
+
+    </header>
+
+
+
+<section class="content">
+  
+	<article>
+    
+		<header class="gradient-2" data-animation="fadeInDownBig">
+
+			<div class="overlay active" style="background-image: url(/images/header-1.jpg);" data-parallax="9"></div>
+      
+<div class="excerpt">
+
+	
+		<span class="title">5 minutes</span>
+
+		<h1>Design in The Browser With This ONE Line of Javascript</h1>
+		<p>Learn how to design in the browser with this simple Javascript hack that will turn your browser into a live WYSIWYG editor.</p>
+
+		<span class="meta">Published <b>Oct 18, 2017</b> in <b>guides</b></span>
+
+		<a href="#" title="Scroll" class="scroll">Find out more</a>
+	
+        
+
+</div>
+
+
+
+		</header>
+
+		<div class="body" data-animation="fadeInUp">
+
+			<p>Don’t you wish that you could design right on the browser sometimes?</p>
+
+<p>I mean, using Photoshop or Sketch for designing user interfaces is great for certain situations — like creating certain UI elements like icons for example — but when it comes to the doing the bulk of the work, the process is incredibly inefficient.</p>
+
+<p>Just think about the possibilities of designing directly in the browser for a second:</p>
+
+<ul>
+  <li>You wouldn’t have to spend so much time making a small code change, refreshing the page, seeing if everything looks OK (most likely it doesn’t), and then repeating the process over and over and <em>over</em> again.</li>
+  <li>Instantly see how your new design changes would affect your site’s responsiveness at different screen sizes by simply resizing your browser window</li>
+  <li>You could whip up revised mockups in seconds by just making changes right on the page, taking a screen capture, and then sending them off for client approval (instead of spend 30 minutes wrestling with your layers).</li>
+</ul>
+
+<p>Well, there <em>is</em> a simple Javascript property that will <strong>turn your browser into a live WYSIWYG editor</strong>. And best of all, it doesn’t require a monthly membership required to do it.</p>
+
+<p>Today, I’ll show you all about this little-known Javascript hack that could prove to be a valuable new tool in your design arsenal.</p>
+
+<h2 id="the-magic-of-contenteditable">The magic of ‘contentEditable’</h2>
+
+<p>Just like you can add an inline <code class="highlighter-rouge">style</code> property to any HTML element, you can also add a little property called <code class="highlighter-rouge">contentEditable</code> to any tag on your document and turn that element into a live text editor for your user.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">contentEditable=</span><span class="s">"true"</span><span class="nt">&gt;</span>This is a paragraph that can be edited by the user.<span class="nt">&lt;/p&gt;</span></code></pre></figure>
+
+<p>This can open up a wide range of interesting possibilities during the UI/UX development phase – not to mention – help you visualize EXACTLY what a revised design change would look like <em>before</em> having to make the change in the source code.</p>
+
+<h2 id="seeing-is-believing">Seeing is believing</h2>
+
+<p>Let’s take a look at how exactly this happens with a simple example. In the CodePen below, I have three elements:</p>
+
+<ul>
+  <li>The first one is just a normal <code class="highlighter-rouge">div</code> with a paragraph tag</li>
+  <li>The second one has the <code class="highlighter-rouge">contentEditable</code> property on the parent <code class="highlighter-rouge">div</code> tag already, making my paragraph editable by the user as soon as the page loads</li>
+  <li>The third one <em>starts out</em> as a normal <code class="highlighter-rouge">div</code> with a paragraph, but has a button which will add the <code class="highlighter-rouge">contentEditable</code> property to its parent <code class="highlighter-rouge">div</code> on click – turning that fixed element into a UI element the user can manipulate.</li>
+</ul>
+
+<div class="media codepen" data-animation="fadeInUp">
+
+	<p data-height="455" data-theme-id="dark" data-slug-hash="qPyVzW" data-default-tab="html,result" data-user="johnludena" data-embed-version="2" data-pen-title="Simple Demo of 'contentEditable' Property" class="codepen">See the Pen <a href="https://codepen.io/johnludena/pen/qPyVzW/">Simple Demo of 'contentEditable' Property</a> by John Ludena (<a href="https://codepen.io/johnludena">@johnludena</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+	<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+	
+		<div class="caption" data-animation="fadeInUp">
+		  
+		  
+
+		  
+		  	<p>Live example of ‘contentEditable’ in action</p>
+		  
+
+		  
+
+		</div>
+	
+
+</div>
+
+<h2 id="the-contenteditable-hack-for-uiux-designers">The contentEditable hack for UI/UX designers</h2>
+<p>In our case, we’ll make use of this handy property to apply the contentEditable property to our <code class="highlighter-rouge">body</code> tag, therefore turning <em>the entire web page</em> it into a visual editor… right inside the browser!</p>
+
+<p>I’ll be using Chrome in this example, but this works on all modern browsers. The steps are simple:</p>
+
+<ol>
+  <li>Open your developer tools and access the browser’s built-in console (all browsers have this). Sometimes they are under a ‘View’ menu or in the ‘Settings.’ In Chrome, this is inside the main settings accessed by clicking the three dots icons, and then going to ‘More Tools’ and then ‘Developer Tools.’</li>
+  <li>Switch to your “Console” tab in the new window that pops up.</li>
+  <li>Type in the following command in the console: <code class="highlighter-rouge">document.body.contentEditable = true</code></li>
+</ol>
+
+<div class="media youtube" data-animation="fadeInUp">
+
+	
+		<iframe src="http://www.youtube.com/embed/CnjRqgSkV9s" allowfullscreen=""></iframe>
+	
+
+	
+		<div class="caption" data-animation="fadeInUp">
+		  
+		  
+
+		  
+		  	<p>The magic of ‘contentEditable’ in action</p>
+		  
+
+		  
+
+		</div>
+	
+
+</div>
+
+<p>As you can see in the video above, I can now CLICK on any element on my browser window, and EDIT it on the spot!</p>
+
+<p>How cool is that?</p>
+
+<p>Now, of course, this changes are not being made to the original source code. What we are doing is just manipulating the browser’s DOM (the picture that the browser “paints” using our original source code, but not the original source code itself).</p>
+
+<p>What this means is that all these edits will go away when you hit the “Refresh” button because the picture will get re-painted at that time.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>By being able to edit things right on your browser, you can quickly test how your design and layout would change by altering a certain headline or call-to-action — particularly the responsiveness and flow of the entire page — without ever having to fire up your code editor.</p>
+
+<p>In other words: No more guessing if that new design change is going to break your current pixel-perfect layout. Simply turn on <code class="highlighter-rouge">contentEditable</code> and type it in. Happy with how it looks? Make the code change at that point.</p>
+
+<p>Or you can also take a full page screenshot and either send it to your client for approval, or to your dev team to make the necessary changes in the source code at that point (I recommend using the <a href="https://www.getfireshot.com">FireShot</a> extension for Chrome to take a complete screenshot. It’s super handy!).</p>
+
+<p>Hope you found this technique useful. Subscribe below to receive more articles like this one straight to your inbox.</p>
+
+<!-- Newsletter call-to-action -->
+<div class="cta-form" data-animation="fadeInRightBig">
+  
+    <!-- Begin MailChimp Signup Form -->
+    <div class="mc_embed_signup">
+
+    	<h3>Subscribe below to receive more articles like this one straight to your inbox.</h3>
+
+	    <form action="//boldpixelmedia.us5.list-manage.com/subscribe/post-json?u=d6c6ce7da87357b90e9859e81&amp;id=2091bdd722&amp;c=?" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+	        <div id="mc_embed_signup_scroll">
+			    <!-- <div class="indicates-required"><span class="asterisk">*</span> indicates required</div> -->
+			    
+			    <div class="mc-field-group">
+			  		<label for="mce-FNAME">First Name </label>
+			  		<input type="text" value="" name="FNAME" class="required" id="mce-FNAME" />
+			    </div>
+			    <div class="mc-field-group">
+			  	<label for="mce-EMAIL">Email Address
+			  	</label>
+			  	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" />
+			  	</div>
+				 
+			    <p class="error-message">Please fill out the fields above.</p>
+
+		        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d6c6ce7da87357b90e9859e81_2091bdd722" tabindex="-1" value="" /></div>
+		        <div class="clear"><input type="submit" value="Yes, I want in!" name="subscribe" id="mc-embedded-subscribe" class="cta-btn" /></div>
+	      	</div>
+	  	</form>
+
+    </div>
+    <!--End mc_embed_signup-->
+
+    <div class="success-message">
+		<svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" /><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" /></svg>
+
+		<p>Success! Click the verify link in the email I just sent you to complete your registration.</p>
+	</div>
+
+    
+</div>
+
+
+
+		</div>
+
+		<footer>
+
+			
+
+  <div class="meta">
+
+    <div class="author" data-animation="fadeInUp">
+                  
+      <span class="title">Written by</span>
+
+      <h4>John Ludena</h4>
+      <p>Front-end developer passionate about great design and building better user-interfaces.</p>
+
+      
+
+    </div>
+
+    <div class="share" data-animation="fadeInUp">
+                  
+      <span class="title">Share</span>
+
+      <ul>
+        <li><a href="https://twitter.com/home?status=Introducing%20a%20practical%20Javascript%20course%20with%20designers%20in%20mind!%20Learn%20every...%20http://localhost:4000/design-in-the-browser/" title="Tweet" class="icon twitter">Tweet</a></li>
+        <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/design-in-the-browser/" title="Like" class="icon facebook">Like</a></li>
+        <!-- <li><a href="https://plus.google.com/share?url=http://localhost:4000/design-in-the-browser/" title="+1" class="icon google">+1</a></li> -->
+      </ul>
+
+    </div>
+
+  </div>
+
+
+
+			<!-- 
+  <div class="comments" data-animation="fadeInUp">
+    
+    <span class="title">Comments</span>
+    <div id="disqus_thread"></div>
+
+    <script type="text/javascript">
+      var disqus_shortname = 'your_disqus_shortname';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+
+    <noscript>
+      Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+  </div>
+ -->
+
+			
+
+	<div class="pagination" data-animation="fadeInUp">
+		
+		<a href="/javascript-101-the-dom/" title="View Newer Posts" class="button newer">Newer</a>
+	</div>
+
+
+
+
+
+		</footer>
+
+	</article>
+
+</section>
+
+
+
+	
+
+	
+
+	<section class="teaser gradient-3" data-animation="fadeInUp">
+	      
+		<div class="excerpt">
+	            
+			<span class="title">5 minutes</span>
+
+			
+				<h1><a href="/javascript-101-the-dom/" title="Javascript for Designers 101: The DOM (An Illustrated Guide)">Javascript for Designers 101: The DOM (An Illustrated Guide)</a></h1>
+			
+
+			<p>Learn all about the mythical DOM: What the heck it is, and why it's so important when you are getting started in your Javascript journey as a designer.</p>
+
+			
+				<span class="meta">Published <b>Oct 18, 2017</b> in <b>guides</b></span>
+			
+
+		</div>
+
+	</section>
+
+
+
+    
+
+      <footer data-animation="fadeInUp">
+        <div class="copyright">
+          <p><strong>Copyright 2017 Javascript for Designers.</strong> All Rights Reserved.
+        	<a href="mailto:hello@javascriptfordesigners.io" title="Send E-Mail">Contact</a>
+        	<a href="/feed.xml" title="Subscribe to Feed">RSS</a></p>
+          <p>(Please excuse the mess. This site is still under construction!)</p>
+        </div>
+      </footer>
+      
+    
+    
+    <script src="/assets/jquery-3.2.1.min.js"></script>
+    <script src="/assets/jquery.viewportchecker.min.js"></script>
+    <script src="/assets/scripts.js"></script>
+
+  </body>
+
+</html>

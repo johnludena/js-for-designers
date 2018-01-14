@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript {for} Designers</title>
+    <description>Introducing a practical Javascript course with designers in mind! Learn everyday JS fundamentals that will let you bring your UI/UX vision to life.</description>
+    <link></link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Javascript for Designers 101: The DOM (An Illustrated Guide)</title>
+        <description>&lt;p&gt;If you ever tried to learn Javascript on your own and lurked around a developers’ community (i.e. Stack Overflow), chances are you’ve heard of “the DOM.”&lt;/p&gt;
+
+&lt;p&gt;But do you know exactly &lt;em&gt;what&lt;/em&gt; it is? And more importantly, WHY it’s so damn important when learning Javascript as a designer?&lt;/p&gt;
+
+&lt;p&gt;Well, that’s exactly what we’ll be covering in this post. You’ll finally understand what the heck your smug developer friend is talking about next time he decides to throw a casual “DOM” around at your next meeting.&lt;/p&gt;
+
+&lt;p&gt;Sound good? Read on…&lt;/p&gt;
+
+&lt;h2 id=&quot;enter-the-dom&quot;&gt;Enter “the DOM”&lt;/h2&gt;
+
+&lt;p&gt;Javascript developers love to throw this term around because it makes them feel smart.&lt;/p&gt;
+
+&lt;p&gt;OK, not really. But it’s &lt;em&gt;really&lt;/em&gt; helpful when trying to explain how to do something in Javascript.&lt;/p&gt;
+
+&lt;p&gt;Well, what the heck is the DOM anyways? Well, first of all, DOM stands for &lt;strong&gt;Document Object Model&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;OK, great. But what does that all mean &lt;em&gt;really&lt;/em&gt;?&lt;/p&gt;
+
+&lt;p&gt;The DOM is &lt;strong&gt;the code that gets compiled by the browser from all your HTML, CSS, and Javascript files and outputted to the screen&lt;/strong&gt;. Developers usually refer this as the browser “painting” a picture on screen.&lt;/p&gt;
+
+&lt;p&gt;Let’s break that down a bit though…&lt;/p&gt;
+
+&lt;p&gt;Picture a tree with lots of branches going upwards to the sky. Well, the DOM is a lot like that. In fact, you could say that the DOM &lt;em&gt;is&lt;/em&gt; in fact, a virtual tree that’s created from all your source code.&lt;/p&gt;
+
+&lt;div class=&quot;media image&quot; data-animation=&quot;fadeInUp&quot;&gt;
+
+	
+
+		&lt;img src=&quot;/images/content/DOM-tree.jpg&quot; alt=&quot;&quot; /&gt;
+	
+
+	
+
+&lt;/div&gt;
+
+&lt;h2 id=&quot;a-real-code-example&quot;&gt;A real code example&lt;/h2&gt;
+
+&lt;p&gt;Let’s say I had a simple HTML file that looks like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;My awesome page title&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;description&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;An introduction to the DOM&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;js/my-javascript-file.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Page title&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
+				&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Some paragraph.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+				&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Another paragraph.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+				&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;images/some-image.jpg&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+			 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+			 &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+				&lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;A list item&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+				&lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;A list item&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+				&lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;A list item&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Here is what this would look like once the browser runs this block of code and creates a little DOM tree for us:&lt;/p&gt;
+
+&lt;div class=&quot;media image&quot; data-animation=&quot;fadeInUp&quot;&gt;
+
+	
+
+		&lt;img src=&quot;/images/content/DOM-tree-example.jpg&quot; alt=&quot;&quot; /&gt;
+	
+
+	
+
+&lt;/div&gt;
+
+&lt;p&gt;As you can see, your tree has a bunch of different branches that each extend as children of other branches. And at the end of each branch is an &lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt; tag (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;div&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;p&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;li&lt;/code&gt;, etc). We could say these make up the leaves of our little tree.&lt;/p&gt;
+
+&lt;p&gt;Now, of course, these trees can get &lt;em&gt;pretty&lt;/em&gt; massive. Just imagine a massive web app or complicated website (e.g. Facebook).&lt;/p&gt;
+
+&lt;p&gt;However, no matter how big or small your DOM tree, they all start out the same: The &lt;code class=&quot;highlighter-rouge&quot;&gt;document&lt;/code&gt; is the root and it’s where all your HTML tags start branching out from. We’ll talk a bit more about this mysterious &lt;code class=&quot;highlighter-rouge&quot;&gt;document&lt;/code&gt; root on another post, but just understand for now that every DOM tree starts with this as the base and then uses all your &lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt; tags to create the branches and leaves of your DOM tree.&lt;/p&gt;
+
+&lt;h2 id=&quot;one-important-point-the-dom-is-not-just-your-html-file&quot;&gt;One important point: The DOM is NOT just your .html file!&lt;/h2&gt;
+
+&lt;p&gt;I struggled wrapping my mind around this concept when I first started learning Javascript.&lt;/p&gt;
+
+&lt;p&gt;For the longest time, I used to confuse the DOM with my actual source code (the code you write in an HTML file for example).&lt;/p&gt;
+
+&lt;p&gt;However, the DOM is not exactly &lt;em&gt;just&lt;/em&gt; the HTML code you write.&lt;/p&gt;
+
+&lt;p&gt;Here’s an example to help you understand things better. Let’s pretend I have an HTML file with &lt;code class=&quot;highlighter-rouge&quot;&gt;p&lt;/code&gt; tag in the body and nothing else. This paragraph has a class called ‘blue.’&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;blue&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;You are learning Javascript!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now, inside my CSS file, I have a class called &lt;code class=&quot;highlighter-rouge&quot;&gt;blue&lt;/code&gt; that will show the paragraph in blue.&lt;/p&gt;
+
+&lt;p&gt;No biggie, right?&lt;/p&gt;
+
+&lt;p&gt;HOWEVER, I also have a CSS style for a paragraph that contains both the class &lt;code class=&quot;highlighter-rouge&quot;&gt;blue&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;active&lt;/code&gt;. This style will not only turn the paragraph blue, but &lt;strong&gt;it will also underline it.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, I’m going to use a tiny bit of Javascript to add a CSS class to our paragraph (don’t freak out, we’ll be talking in detail about the basics of what’s happening here in another lesson).&lt;/p&gt;
+
+&lt;p&gt;Let’s use a live pen demo so you can see how this works:&lt;/p&gt;
+
+&lt;div class=&quot;media codepen&quot; data-animation=&quot;fadeInUp&quot;&gt;
+
+	&lt;p data-height=&quot;260&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;dJKZKr&quot; data-default-tab=&quot;html,result&quot; data-user=&quot;johnludena&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;Javascript  101: DOM Example&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;https://codepen.io/johnludena/pen/dJKZKr/&quot;&gt;Javascript  101: DOM Example&lt;/a&gt; by John Ludena (&lt;a href=&quot;https://codepen.io/johnludena&quot;&gt;@johnludena&lt;/a&gt;) on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+	&lt;script async=&quot;&quot; src=&quot;https://production-assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+
+	
+
+&lt;/div&gt;
+
+&lt;p&gt;If you’ve never used CodePen before, it’s a super cool web app to play around with code online quickly without having to necessarily create a local project on your computer. And most “Pens” are just three simple files: an HTML file, a CSS file, and a Javascript file.&lt;/p&gt;
+
+&lt;p&gt;But wait, what exactly is going on in the Javascript file?&lt;/p&gt;
+
+&lt;p&gt;Just take my word for it for the time being, but those two lines ADD a CSS class called ‘active’ to our existing paragraph with a class ‘blue’. In other words, the “picture” that the browser will finally end up “painting on screen” once the page loads will now have TWO classes: &lt;code class=&quot;highlighter-rouge&quot;&gt;blue&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;active&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;media image&quot; data-animation=&quot;fadeInUp&quot;&gt;
+
+	
+
+		&lt;img src=&quot;/images/content/DOM-console.jpg&quot; alt=&quot;&quot; /&gt;
+	
+
+	
+		&lt;div class=&quot;caption&quot; data-animation=&quot;fadeInUp&quot;&gt;
+		  
+		  
+
+		  
+		  	&lt;p&gt;Looking at the DOM using Google Chrome's developer tools&lt;/p&gt;
+		  
+
+		  
+
+		&lt;/div&gt;
+	
+
+&lt;/div&gt;
+
+&lt;p&gt;Got it? &lt;strong&gt;Your own HTML code alone is NOT the DOM.&lt;/strong&gt; The DOM is the final HTML picture your browser paints once ALL your files (yes, your Javascript files as well) are read and compiled.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;I hope that now you finally understand a little more about the basics of creating all interactivity in Javascript by first understanding what the DOM is and how it is created.&lt;/p&gt;
+
+&lt;p&gt;If you want some more where that came from, make sure to sign up for my upcoming &lt;strong&gt;FREE&lt;/strong&gt; Javascript for Designers crash course below.&lt;/p&gt;
+
+&lt;!-- Newsletter call-to-action --&gt;
+&lt;div class=&quot;cta-form&quot; data-animation=&quot;fadeInRightBig&quot;&gt;
+  
+    &lt;!-- Begin MailChimp Signup Form --&gt;
+    &lt;div class=&quot;mc_embed_signup&quot;&gt;
+
+    	&lt;h3&gt;Subscribe below to receive more articles like this one straight to your inbox.&lt;/h3&gt;
+
+	    &lt;form action=&quot;//boldpixelmedia.us5.list-manage.com/subscribe/post-json?u=d6c6ce7da87357b90e9859e81&amp;amp;id=2091bdd722&amp;amp;c=?&quot; method=&quot;post&quot; id=&quot;mc-embedded-subscribe-form&quot; name=&quot;mc-embedded-subscribe-form&quot; class=&quot;validate&quot; target=&quot;_blank&quot; novalidate=&quot;&quot;&gt;
+	        &lt;div id=&quot;mc_embed_signup_scroll&quot;&gt;
+			    &lt;!-- &lt;div class=&quot;indicates-required&quot;&gt;&lt;span class=&quot;asterisk&quot;&gt;*&lt;/span&gt; indicates required&lt;/div&gt; --&gt;
+			    
+			    &lt;div class=&quot;mc-field-group&quot;&gt;
+			  		&lt;label for=&quot;mce-FNAME&quot;&gt;First Name &lt;/label&gt;
+			  		&lt;input type=&quot;text&quot; value=&quot;&quot; name=&quot;FNAME&quot; class=&quot;required&quot; id=&quot;mce-FNAME&quot; /&gt;
+			    &lt;/div&gt;
+			    &lt;div class=&quot;mc-field-group&quot;&gt;
+			  	&lt;label for=&quot;mce-EMAIL&quot;&gt;Email Address
+			  	&lt;/label&gt;
+			  	&lt;input type=&quot;email&quot; value=&quot;&quot; name=&quot;EMAIL&quot; class=&quot;required email&quot; id=&quot;mce-EMAIL&quot; /&gt;
+			  	&lt;/div&gt;
+				 
+			    &lt;p class=&quot;error-message&quot;&gt;Please fill out the fields above.&lt;/p&gt;
+
+		        &lt;div style=&quot;position: absolute; left: -5000px;&quot; aria-hidden=&quot;true&quot;&gt;&lt;input type=&quot;text&quot; name=&quot;b_d6c6ce7da87357b90e9859e81_2091bdd722&quot; tabindex=&quot;-1&quot; value=&quot;&quot; /&gt;&lt;/div&gt;
+		        &lt;div class=&quot;clear&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;Yes, I want in!&quot; name=&quot;subscribe&quot; id=&quot;mc-embedded-subscribe&quot; class=&quot;cta-btn&quot; /&gt;&lt;/div&gt;
+	      	&lt;/div&gt;
+	  	&lt;/form&gt;
+
+    &lt;/div&gt;
+    &lt;!--End mc_embed_signup--&gt;
+
+    &lt;div class=&quot;success-message&quot;&gt;
+		&lt;svg class=&quot;checkmark&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 52 52&quot;&gt;&lt;circle class=&quot;checkmark__circle&quot; cx=&quot;26&quot; cy=&quot;26&quot; r=&quot;25&quot; fill=&quot;none&quot; /&gt;&lt;path class=&quot;checkmark__check&quot; fill=&quot;none&quot; d=&quot;M14.1 27.2l7.1 7.2 16.7-16.8&quot; /&gt;&lt;/svg&gt;
+
+		&lt;p&gt;Success! Click the verify link in the email I just sent you to complete your registration.&lt;/p&gt;
+	&lt;/div&gt;
+
+    
+&lt;/div&gt;
+
+</description>
+        <pubDate>Wed, 18 Oct 2017 00:00:00 -0500</pubDate>
+        <link>/javascript-101-the-dom/</link>
+        <guid isPermaLink="true">/javascript-101-the-dom/</guid>
+      </item>
+    
+      <item>
+        <title>Design in The Browser With This ONE Line of Javascript</title>
+        <description>&lt;p&gt;Don’t you wish that you could design right on the browser sometimes?&lt;/p&gt;
+
+&lt;p&gt;I mean, using Photoshop or Sketch for designing user interfaces is great for certain situations — like creating certain UI elements like icons for example — but when it comes to the doing the bulk of the work, the process is incredibly inefficient.&lt;/p&gt;
+
+&lt;p&gt;Just think about the possibilities of designing directly in the browser for a second:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;You wouldn’t have to spend so much time making a small code change, refreshing the page, seeing if everything looks OK (most likely it doesn’t), and then repeating the process over and over and &lt;em&gt;over&lt;/em&gt; again.&lt;/li&gt;
+  &lt;li&gt;Instantly see how your new design changes would affect your site’s responsiveness at different screen sizes by simply resizing your browser window&lt;/li&gt;
+  &lt;li&gt;You could whip up revised mockups in seconds by just making changes right on the page, taking a screen capture, and then sending them off for client approval (instead of spend 30 minutes wrestling with your layers).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Well, there &lt;em&gt;is&lt;/em&gt; a simple Javascript property that will &lt;strong&gt;turn your browser into a live WYSIWYG editor&lt;/strong&gt;. And best of all, it doesn’t require a monthly membership required to do it.&lt;/p&gt;
+
+&lt;p&gt;Today, I’ll show you all about this little-known Javascript hack that could prove to be a valuable new tool in your design arsenal.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-magic-of-contenteditable&quot;&gt;The magic of ‘contentEditable’&lt;/h2&gt;
+
+&lt;p&gt;Just like you can add an inline &lt;code class=&quot;highlighter-rouge&quot;&gt;style&lt;/code&gt; property to any HTML element, you can also add a little property called &lt;code class=&quot;highlighter-rouge&quot;&gt;contentEditable&lt;/code&gt; to any tag on your document and turn that element into a live text editor for your user.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;contentEditable=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;This is a paragraph that can be edited by the user.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This can open up a wide range of interesting possibilities during the UI/UX development phase – not to mention – help you visualize EXACTLY what a revised design change would look like &lt;em&gt;before&lt;/em&gt; having to make the change in the source code.&lt;/p&gt;
+
+&lt;h2 id=&quot;seeing-is-believing&quot;&gt;Seeing is believing&lt;/h2&gt;
+
+&lt;p&gt;Let’s take a look at how exactly this happens with a simple example. In the CodePen below, I have three elements:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The first one is just a normal &lt;code class=&quot;highlighter-rouge&quot;&gt;div&lt;/code&gt; with a paragraph tag&lt;/li&gt;
+  &lt;li&gt;The second one has the &lt;code class=&quot;highlighter-rouge&quot;&gt;contentEditable&lt;/code&gt; property on the parent &lt;code class=&quot;highlighter-rouge&quot;&gt;div&lt;/code&gt; tag already, making my paragraph editable by the user as soon as the page loads&lt;/li&gt;
+  &lt;li&gt;The third one &lt;em&gt;starts out&lt;/em&gt; as a normal &lt;code class=&quot;highlighter-rouge&quot;&gt;div&lt;/code&gt; with a paragraph, but has a button which will add the &lt;code class=&quot;highlighter-rouge&quot;&gt;contentEditable&lt;/code&gt; property to its parent &lt;code class=&quot;highlighter-rouge&quot;&gt;div&lt;/code&gt; on click – turning that fixed element into a UI element the user can manipulate.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;media codepen&quot; data-animation=&quot;fadeInUp&quot;&gt;
+
+	&lt;p data-height=&quot;455&quot; data-theme-id=&quot;dark&quot; data-slug-hash=&quot;qPyVzW&quot; data-default-tab=&quot;html,result&quot; data-user=&quot;johnludena&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;Simple Demo of 'contentEditable' Property&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;https://codepen.io/johnludena/pen/qPyVzW/&quot;&gt;Simple Demo of 'contentEditable' Property&lt;/a&gt; by John Ludena (&lt;a href=&quot;https://codepen.io/johnludena&quot;&gt;@johnludena&lt;/a&gt;) on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+	&lt;script async=&quot;&quot; src=&quot;https://production-assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+
+	
+		&lt;div class=&quot;caption&quot; data-animation=&quot;fadeInUp&quot;&gt;
+		  
+		  
+
+		  
+		  	&lt;p&gt;Live example of ‘contentEditable’ in action&lt;/p&gt;
+		  
+
+		  
+
+		&lt;/div&gt;
+	
+
+&lt;/div&gt;
+
+&lt;h2 id=&quot;the-contenteditable-hack-for-uiux-designers&quot;&gt;The contentEditable hack for UI/UX designers&lt;/h2&gt;
+&lt;p&gt;In our case, we’ll make use of this handy property to apply the contentEditable property to our &lt;code class=&quot;highlighter-rouge&quot;&gt;body&lt;/code&gt; tag, therefore turning &lt;em&gt;the entire web page&lt;/em&gt; it into a visual editor… right inside the browser!&lt;/p&gt;
+
+&lt;p&gt;I’ll be using Chrome in this example, but this works on all modern browsers. The steps are simple:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open your developer tools and access the browser’s built-in console (all browsers have this). Sometimes they are under a ‘View’ menu or in the ‘Settings.’ In Chrome, this is inside the main settings accessed by clicking the three dots icons, and then going to ‘More Tools’ and then ‘Developer Tools.’&lt;/li&gt;
+  &lt;li&gt;Switch to your “Console” tab in the new window that pops up.&lt;/li&gt;
+  &lt;li&gt;Type in the following command in the console: &lt;code class=&quot;highlighter-rouge&quot;&gt;document.body.contentEditable = true&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;media youtube&quot; data-animation=&quot;fadeInUp&quot;&gt;
+
+	
+		&lt;iframe src=&quot;http://www.youtube.com/embed/CnjRqgSkV9s&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+	
+
+	
+		&lt;div class=&quot;caption&quot; data-animation=&quot;fadeInUp&quot;&gt;
+		  
+		  
+
+		  
+		  	&lt;p&gt;The magic of ‘contentEditable’ in action&lt;/p&gt;
+		  
+
+		  
+
+		&lt;/div&gt;
+	
+
+&lt;/div&gt;
+
+&lt;p&gt;As you can see in the video above, I can now CLICK on any element on my browser window, and EDIT it on the spot!&lt;/p&gt;
+
+&lt;p&gt;How cool is that?&lt;/p&gt;
+
+&lt;p&gt;Now, of course, this changes are not being made to the original source code. What we are doing is just manipulating the browser’s DOM (the picture that the browser “paints” using our original source code, but not the original source code itself).&lt;/p&gt;
+
+&lt;p&gt;What this means is that all these edits will go away when you hit the “Refresh” button because the picture will get re-painted at that time.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;By being able to edit things right on your browser, you can quickly test how your design and layout would change by altering a certain headline or call-to-action — particularly the responsiveness and flow of the entire page — without ever having to fire up your code editor.&lt;/p&gt;
+
+&lt;p&gt;In other words: No more guessing if that new design change is going to break your current pixel-perfect layout. Simply turn on &lt;code class=&quot;highlighter-rouge&quot;&gt;contentEditable&lt;/code&gt; and type it in. Happy with how it looks? Make the code change at that point.&lt;/p&gt;
+
+&lt;p&gt;Or you can also take a full page screenshot and either send it to your client for approval, or to your dev team to make the necessary changes in the source code at that point (I recommend using the &lt;a href=&quot;https://www.getfireshot.com&quot;&gt;FireShot&lt;/a&gt; extension for Chrome to take a complete screenshot. It’s super handy!).&lt;/p&gt;
+
+&lt;p&gt;Hope you found this technique useful. Subscribe below to receive more articles like this one straight to your inbox.&lt;/p&gt;
+
+&lt;!-- Newsletter call-to-action --&gt;
+&lt;div class=&quot;cta-form&quot; data-animation=&quot;fadeInRightBig&quot;&gt;
+  
+    &lt;!-- Begin MailChimp Signup Form --&gt;
+    &lt;div class=&quot;mc_embed_signup&quot;&gt;
+
+    	&lt;h3&gt;Subscribe below to receive more articles like this one straight to your inbox.&lt;/h3&gt;
+
+	    &lt;form action=&quot;//boldpixelmedia.us5.list-manage.com/subscribe/post-json?u=d6c6ce7da87357b90e9859e81&amp;amp;id=2091bdd722&amp;amp;c=?&quot; method=&quot;post&quot; id=&quot;mc-embedded-subscribe-form&quot; name=&quot;mc-embedded-subscribe-form&quot; class=&quot;validate&quot; target=&quot;_blank&quot; novalidate=&quot;&quot;&gt;
+	        &lt;div id=&quot;mc_embed_signup_scroll&quot;&gt;
+			    &lt;!-- &lt;div class=&quot;indicates-required&quot;&gt;&lt;span class=&quot;asterisk&quot;&gt;*&lt;/span&gt; indicates required&lt;/div&gt; --&gt;
+			    
+			    &lt;div class=&quot;mc-field-group&quot;&gt;
+			  		&lt;label for=&quot;mce-FNAME&quot;&gt;First Name &lt;/label&gt;
+			  		&lt;input type=&quot;text&quot; value=&quot;&quot; name=&quot;FNAME&quot; class=&quot;required&quot; id=&quot;mce-FNAME&quot; /&gt;
+			    &lt;/div&gt;
+			    &lt;div class=&quot;mc-field-group&quot;&gt;
+			  	&lt;label for=&quot;mce-EMAIL&quot;&gt;Email Address
+			  	&lt;/label&gt;
+			  	&lt;input type=&quot;email&quot; value=&quot;&quot; name=&quot;EMAIL&quot; class=&quot;required email&quot; id=&quot;mce-EMAIL&quot; /&gt;
+			  	&lt;/div&gt;
+				 
+			    &lt;p class=&quot;error-message&quot;&gt;Please fill out the fields above.&lt;/p&gt;
+
+		        &lt;div style=&quot;position: absolute; left: -5000px;&quot; aria-hidden=&quot;true&quot;&gt;&lt;input type=&quot;text&quot; name=&quot;b_d6c6ce7da87357b90e9859e81_2091bdd722&quot; tabindex=&quot;-1&quot; value=&quot;&quot; /&gt;&lt;/div&gt;
+		        &lt;div class=&quot;clear&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;Yes, I want in!&quot; name=&quot;subscribe&quot; id=&quot;mc-embedded-subscribe&quot; class=&quot;cta-btn&quot; /&gt;&lt;/div&gt;
+	      	&lt;/div&gt;
+	  	&lt;/form&gt;
+
+    &lt;/div&gt;
+    &lt;!--End mc_embed_signup--&gt;
+
+    &lt;div class=&quot;success-message&quot;&gt;
+		&lt;svg class=&quot;checkmark&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 52 52&quot;&gt;&lt;circle class=&quot;checkmark__circle&quot; cx=&quot;26&quot; cy=&quot;26&quot; r=&quot;25&quot; fill=&quot;none&quot; /&gt;&lt;path class=&quot;checkmark__check&quot; fill=&quot;none&quot; d=&quot;M14.1 27.2l7.1 7.2 16.7-16.8&quot; /&gt;&lt;/svg&gt;
+
+		&lt;p&gt;Success! Click the verify link in the email I just sent you to complete your registration.&lt;/p&gt;
+	&lt;/div&gt;
+
+    
+&lt;/div&gt;
+
+</description>
+        <pubDate>Wed, 18 Oct 2017 00:00:00 -0500</pubDate>
+        <link>/design-in-the-browser/</link>
+        <guid isPermaLink="true">/design-in-the-browser/</guid>
+      </item>
+    
+  </channel>
+</rss>
