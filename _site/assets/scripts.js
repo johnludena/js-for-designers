@@ -1,4 +1,4 @@
-console.log('1.31');
+console.log('codepen test');
 
 $(window).on('load', function() {
 	$("body").removeClass("preload");
