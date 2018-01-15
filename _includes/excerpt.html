@@ -11,7 +11,9 @@
 		<!-- <a href="#" title="Find out more" class="top-cta cta-btn">Find out more</a> -->
 
 	{% else %}
-		<span class="title">{{ page.content | reading_time_as_i }}</span>
+		{% if page.content | reading_time_as_i %}	
+			<span class="title">{{ page.content | reading_time_as_i }}</span>
+		{% endif %}
 
 		<h1>{{ page.title }}</h1>
 		<p>{{ page.excerpt }}</p>

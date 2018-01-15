@@ -1,4 +1,4 @@
-console.log('yo');
+console.log('yow2');
 
 $(window).on('load', function() {
 	$("body").removeClass("preload");
