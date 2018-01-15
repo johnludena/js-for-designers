@@ -1,13 +1,13 @@
 ---
 
 layout:			default
-title:  		'Javascript for Designers 101: The DOM (An Illustrated Guide)' 
+title:  		'Javascript for Designers 101&#58; The DOM (An Illustrated Guide)' 
 permalink: 		/javascript-101-the-dom/
 type:			post
 navigation: 	false
 
 date:   		2017-10-18
-excerpt: 		Learn all about the mythical DOM&#58; What the heck it is, and why it is so important when you are getting started in your Javascript journey as a designer.
+excerpt: 		"Learn all about the mythical DOM&#58; What the heck it is, and why it is so important when you are getting started in your Javascript journey as a designer."
 categories:		guides
 gradient: 		3
 image: 			header-1.jpg
