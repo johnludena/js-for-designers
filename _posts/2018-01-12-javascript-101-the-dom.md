@@ -110,7 +110,7 @@ Now, I'm going to use a tiny bit of Javascript to add a CSS class to our paragra
 
 Let's use a live pen demo so you can see how this works:
 
-{% include pens/javascript-101-dom.html %}
+<!-- {% include pens/javascript-101-dom.html %} -->
 
 If you've never used CodePen before, it's a super cool web app to play around with code online quickly without having to necessarily create a local project on your computer. And most "Pens" are just three simple files: an HTML file, a CSS file, and a Javascript file.
 
