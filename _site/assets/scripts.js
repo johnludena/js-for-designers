@@ -1,4 +1,4 @@
-console.log('excerpt string with quotes test 2nd');
+console.log('why would content be in time reading... sigh');
 
 $(window).on('load', function() {
 	$("body").removeClass("preload");
