@@ -1,4 +1,4 @@
-console.log('test #89738');
+console.log('yo');
 
 $(window).on('load', function() {
 	$("body").removeClass("preload");
