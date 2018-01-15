@@ -1,4 +1,4 @@
-console.log('why would content be in time reading... sigh');
+console.log('fix for incorrect plugins format in config.yml');
 
 $(window).on('load', function() {
 	$("body").removeClass("preload");
