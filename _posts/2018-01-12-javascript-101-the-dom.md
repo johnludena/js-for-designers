@@ -1,7 +1,7 @@
 ---
 
 layout:			default
-title:  		'Javascript for Designers 101&#58; The DOM (An Illustrated Guide)' 
+title:  		"Javascript for Designers 101&#58; The DOM (An Illustrated Guide)"
 permalink: 		/javascript-101-the-dom/
 type:			post
 navigation: 	false

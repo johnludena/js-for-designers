@@ -1,4 +1,4 @@
-console.log('codepen test');
+console.log('excerpt string with quotes test 2nd');
 
 $(window).on('load', function() {
 	$("body").removeClass("preload");
