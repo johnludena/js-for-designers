@@ -1,4 +1,4 @@
-console.log('fix for incorrect plugins format in config.yml');
+console.log('test #89738');
 
 $(window).on('load', function() {
 	$("body").removeClass("preload");

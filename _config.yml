@@ -1,10 +1,9 @@
 # Site Settings
 baseurl: 		""
 title: 			Javascript for Designers
-
 name: 			Javascript {for} Designers
 description: 	Introducing a practical Javascript course with designers in mind! Learn everyday JS fundamentals that will let you bring your UI/UX vision to life.
-url: 			"http://localhost:4000"
+url: 			"http://www.javascriptfordesigners.io"
 
 # This will require each of these plugins automatically.
 plugins: 
