@@ -1,4 +1,6 @@
 console.log('hi :)');
+console.log('test');
+console.log('third console log test');
 
 $(window).on('load', function() {
 	$("body").removeClass("preload");

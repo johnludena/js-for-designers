@@ -48,7 +48,7 @@ Picture a tree with lots of branches going upwards to the sky. Well, the DOM is 
 
 Let's say I had a simple HTML file that looks like this:
 
-{% highlight html %}
+{% highlight html javascript %}
 <html>
 	<head>
 		<title>My awesome page title</title>
