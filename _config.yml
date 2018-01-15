@@ -7,7 +7,7 @@ description: 	Introducing a practical Javascript course with designers in mind! 
 url: 			"http://localhost:4000"
 
 # This will require each of these plugins automatically.
-plugins: [jekyll-paginate]
+plugins: [jekyll-paginate, jekyll-time-to-read]
 
 paginate: 		3
 paginate_path: 	"blog/page:num"
