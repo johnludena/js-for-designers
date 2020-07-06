@@ -85,11 +85,11 @@
 
 &lt;/div&gt;
 
-&lt;p&gt;As you can see, your tree has a bunch of different branches that each extend as children of other branches. And at the end of each branch is an &lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt; tag (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;div&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;p&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;li&lt;/code&gt;, etc). We could say these make up the leaves of our little tree.&lt;/p&gt;
+&lt;p&gt;As you can see, your tree has a bunch of different branches that each extend as children of other branches. And at the end of each branch is an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;html&lt;/code&gt; tag (e.g. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;div&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;p&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;li&lt;/code&gt;, etc). We could say these make up the leaves of our little tree.&lt;/p&gt;
 
 &lt;p&gt;Now, of course, these trees can get &lt;em&gt;pretty&lt;/em&gt; massive. Just imagine a massive web app or complicated website (e.g. Facebook).&lt;/p&gt;
 
-&lt;p&gt;However, no matter how big or small your DOM tree, they all start out the same: The &lt;code class=&quot;highlighter-rouge&quot;&gt;document&lt;/code&gt; is the root and it’s where all your HTML tags start branching out from. We’ll talk a bit more about this mysterious &lt;code class=&quot;highlighter-rouge&quot;&gt;document&lt;/code&gt; root on another post, but just understand for now that every DOM tree starts with this as the base and then uses all your &lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt; tags to create the branches and leaves of your DOM tree.&lt;/p&gt;
+&lt;p&gt;However, no matter how big or small your DOM tree, they all start out the same: The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;document&lt;/code&gt; is the root and it’s where all your HTML tags start branching out from. We’ll talk a bit more about this mysterious &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;document&lt;/code&gt; root on another post, but just understand for now that every DOM tree starts with this as the base and then uses all your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;html&lt;/code&gt; tags to create the branches and leaves of your DOM tree.&lt;/p&gt;
 
 &lt;h2 id=&quot;one-important-point-the-dom-is-not-just-your-html-file&quot;&gt;One important point: The DOM is NOT just your .html file!&lt;/h2&gt;
 
@@ -99,15 +99,15 @@
 
 &lt;p&gt;However, the DOM is not exactly &lt;em&gt;just&lt;/em&gt; the HTML code you write.&lt;/p&gt;
 
-&lt;p&gt;Here’s an example to help you understand things better. Let’s pretend I have an HTML file with &lt;code class=&quot;highlighter-rouge&quot;&gt;p&lt;/code&gt; tag in the body and nothing else. This paragraph has a class called ‘blue.’&lt;/p&gt;
+&lt;p&gt;Here’s an example to help you understand things better. Let’s pretend I have an HTML file with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;p&lt;/code&gt; tag in the body and nothing else. This paragraph has a class called ‘blue.’&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;blue&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;You are learning Javascript!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Now, inside my CSS file, I have a class called &lt;code class=&quot;highlighter-rouge&quot;&gt;blue&lt;/code&gt; that will show the paragraph in blue.&lt;/p&gt;
+&lt;p&gt;Now, inside my CSS file, I have a class called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;blue&lt;/code&gt; that will show the paragraph in blue.&lt;/p&gt;
 
 &lt;p&gt;No biggie, right?&lt;/p&gt;
 
-&lt;p&gt;HOWEVER, I also have a CSS style for a paragraph that contains both the class &lt;code class=&quot;highlighter-rouge&quot;&gt;blue&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;active&lt;/code&gt;. This style will not only turn the paragraph blue, but &lt;strong&gt;it will also underline it.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;HOWEVER, I also have a CSS style for a paragraph that contains both the class &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;blue&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;active&lt;/code&gt;. This style will not only turn the paragraph blue, but &lt;strong&gt;it will also underline it.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Now, I’m going to use a tiny bit of Javascript to add a CSS class to our paragraph (don’t freak out, we’ll be talking in detail about the basics of what’s happening here in another lesson).&lt;/p&gt;
 
@@ -126,7 +126,7 @@
 
 &lt;p&gt;But wait, what exactly is going on in the Javascript file?&lt;/p&gt;
 
-&lt;p&gt;Just take my word for it for the time being, but those two lines ADD a CSS class called ‘active’ to our existing paragraph with a class ‘blue’. In other words, the “picture” that the browser will finally end up “painting on screen” once the page loads will now have TWO classes: &lt;code class=&quot;highlighter-rouge&quot;&gt;blue&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;active&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Just take my word for it for the time being, but those two lines ADD a CSS class called ‘active’ to our existing paragraph with a class ‘blue’. In other words, the “picture” that the browser will finally end up “painting on screen” once the page loads will now have TWO classes: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;blue&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;active&lt;/code&gt;&lt;/p&gt;
 
 &lt;div class=&quot;media image&quot; data-animation=&quot;fadeInUp&quot;&gt;
 
@@ -225,7 +225,7 @@
 
 &lt;h2 id=&quot;the-magic-of-contenteditable&quot;&gt;The magic of ‘contentEditable’&lt;/h2&gt;
 
-&lt;p&gt;Just like you can add an inline &lt;code class=&quot;highlighter-rouge&quot;&gt;style&lt;/code&gt; property to any HTML element, you can also add a little property called &lt;code class=&quot;highlighter-rouge&quot;&gt;contentEditable&lt;/code&gt; to any tag on your document and turn that element into a live text editor for your user.&lt;/p&gt;
+&lt;p&gt;Just like you can add an inline &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;style&lt;/code&gt; property to any HTML element, you can also add a little property called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;contentEditable&lt;/code&gt; to any tag on your document and turn that element into a live text editor for your user.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;contentEditable=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;This is a paragraph that can be edited by the user.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -236,9 +236,9 @@
 &lt;p&gt;Let’s take a look at how exactly this happens with a simple example. In the CodePen below, I have three elements:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;The first one is just a normal &lt;code class=&quot;highlighter-rouge&quot;&gt;div&lt;/code&gt; with a paragraph tag&lt;/li&gt;
-  &lt;li&gt;The second one has the &lt;code class=&quot;highlighter-rouge&quot;&gt;contentEditable&lt;/code&gt; property on the parent &lt;code class=&quot;highlighter-rouge&quot;&gt;div&lt;/code&gt; tag already, making my paragraph editable by the user as soon as the page loads&lt;/li&gt;
-  &lt;li&gt;The third one &lt;em&gt;starts out&lt;/em&gt; as a normal &lt;code class=&quot;highlighter-rouge&quot;&gt;div&lt;/code&gt; with a paragraph, but has a button which will add the &lt;code class=&quot;highlighter-rouge&quot;&gt;contentEditable&lt;/code&gt; property to its parent &lt;code class=&quot;highlighter-rouge&quot;&gt;div&lt;/code&gt; on click – turning that fixed element into a UI element the user can manipulate.&lt;/li&gt;
+  &lt;li&gt;The first one is just a normal &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;div&lt;/code&gt; with a paragraph tag&lt;/li&gt;
+  &lt;li&gt;The second one has the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;contentEditable&lt;/code&gt; property on the parent &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;div&lt;/code&gt; tag already, making my paragraph editable by the user as soon as the page loads&lt;/li&gt;
+  &lt;li&gt;The third one &lt;em&gt;starts out&lt;/em&gt; as a normal &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;div&lt;/code&gt; with a paragraph, but has a button which will add the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;contentEditable&lt;/code&gt; property to its parent &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;div&lt;/code&gt; on click – turning that fixed element into a UI element the user can manipulate.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;media codepen&quot; data-animation=&quot;fadeInUp&quot;&gt;
@@ -263,14 +263,14 @@
 &lt;/div&gt;
 
 &lt;h2 id=&quot;the-contenteditable-hack-for-uiux-designers&quot;&gt;The contentEditable hack for UI/UX designers&lt;/h2&gt;
-&lt;p&gt;In our case, we’ll make use of this handy property to apply the contentEditable property to our &lt;code class=&quot;highlighter-rouge&quot;&gt;body&lt;/code&gt; tag, therefore turning &lt;em&gt;the entire web page&lt;/em&gt; it into a visual editor… right inside the browser!&lt;/p&gt;
+&lt;p&gt;In our case, we’ll make use of this handy property to apply the contentEditable property to our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;body&lt;/code&gt; tag, therefore turning &lt;em&gt;the entire web page&lt;/em&gt; it into a visual editor… right inside the browser!&lt;/p&gt;
 
 &lt;p&gt;I’ll be using Chrome in this example, but this works on all modern browsers. The steps are simple:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Open your developer tools and access the browser’s built-in console (all browsers have this). Sometimes they are under a ‘View’ menu or in the ‘Settings.’ In Chrome, this is inside the main settings accessed by clicking the three dots icons, and then going to ‘More Tools’ and then ‘Developer Tools.’&lt;/li&gt;
   &lt;li&gt;Switch to your “Console” tab in the new window that pops up.&lt;/li&gt;
-  &lt;li&gt;Type in the following command in the console: &lt;code class=&quot;highlighter-rouge&quot;&gt;document.body.contentEditable = true&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Type in the following command in the console: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;document.body.contentEditable = true&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;div class=&quot;media youtube&quot; data-animation=&quot;fadeInUp&quot;&gt;
@@ -306,7 +306,7 @@
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;By being able to edit things right on your browser, you can quickly test how your design and layout would change by altering a certain headline or call-to-action — particularly the responsiveness and flow of the entire page — without ever having to fire up your code editor.&lt;/p&gt;
 
-&lt;p&gt;In other words: No more guessing if that new design change is going to break your current pixel-perfect layout. Simply turn on &lt;code class=&quot;highlighter-rouge&quot;&gt;contentEditable&lt;/code&gt; and type it in. Happy with how it looks? Make the code change at that point.&lt;/p&gt;
+&lt;p&gt;In other words: No more guessing if that new design change is going to break your current pixel-perfect layout. Simply turn on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;contentEditable&lt;/code&gt; and type it in. Happy with how it looks? Make the code change at that point.&lt;/p&gt;
 
 &lt;p&gt;Or you can also take a full page screenshot and either send it to your client for approval, or to your dev team to make the necessary changes in the source code at that point (I recommend using the &lt;a href=&quot;https://www.getfireshot.com&quot;&gt;FireShot&lt;/a&gt; extension for Chrome to take a complete screenshot. It’s super handy!).&lt;/p&gt;
 
